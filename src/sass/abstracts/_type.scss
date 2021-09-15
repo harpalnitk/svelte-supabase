@@ -1,0 +1,18 @@
+$type-scale: (
+  small:( // Minor third
+    300: 1rem,      //16px
+    400: 1.125rem, //18px
+    500: 1.563rem,  //25px
+    600: 1.953rem,   //31px
+    700: 2.441rem,    //39px
+    800: 3.052rem     //49px
+  ),
+  big:( // Augmented fourth
+    300: 1rem,      //16px
+    400: 1.25rem, //20px
+    500: 2rem,    //32px
+    600: 2.827rem,  //46px
+    700: 4rem,      //64px
+    800: 5.653rem    //90px
+  )
+)

@@ -11,3 +11,7 @@ git push origin HEAD:main
 
 and to pull code
 git pull origin HEAD:main
+
+## Uses SASS
+> npm install sass@1.41.0
+> npm i -D svelte-preprocess node-sass
