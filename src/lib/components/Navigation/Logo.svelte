@@ -15,10 +15,10 @@
 
     svg {
       text {
-        fill: var(--clr-neutral-400);
+        fill: currentColor;
         cursor: pointer;
         &:hover {
-          fill: var(--clr-neutral-700);
+          fill: var(--clr-neutral-400);
         }
       }
     }

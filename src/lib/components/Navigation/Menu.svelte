@@ -9,7 +9,7 @@
   <a aria-current="{$page.path === '/about' ? 'page' : undefined}" href="/about">About</a>
   <a aria-current="{$page.path === '/contact' ? 'page' : undefined}" href="/contact">Contact</a>
   <a aria-current="{$page.path === '/timeline' ? 'page' : undefined}" href="/timeline">Timeline</a>
-  <a aria-current="{$page.path === '/product-filter' ? 'page' : undefined}" href="/product-filter">Product-Filter</a>
+  <a aria-current="{$page.path === '/playground' ? 'page' : undefined}" href="/playground">Playground</a>
   <a aria-current="{$page.path === '/dashboard' ? 'page' : undefined}" href="/dashboard">Dashboard</a>
   <a aria-current="{$page.path === '/auth' ? 'auth' : undefined}" href="/auth">Login</a>
   
@@ -18,22 +18,32 @@
 <style lang="scss">
   //  @import '../../../../styles/vars';
   .menu-controller {
-    text-transform: uppercase;
-    color:var(--clr-neutral-400);
+    height: 100%;
     display: none;
     a {
+      font-size: var(--fs-300);
+      color: currentColor;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: flex;
+   
       &:hover {
-        color: var(--clr-neutral-700);
+        color: var(--clr-neutral-400);
       }
     }
   }
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .menu-controller {
       display: flex;
-      align-self: center;
+      // align-items: center;
+      // align-self: center;
 
       a:not(:last-child) {
-        margin-right: 0.5rem;
+        margin-right: var(--fs-300);
       }
     }
   }
@@ -41,15 +51,16 @@
   [aria-current] {
 		position: relative;
 		display: inline-block;
+
 	}
 
 	[aria-current]::after {
 		position: absolute;
 		content: '';
-		width: calc(100%);
-		height: 2px;
-		background-color: var(--clr-primary-500);
+		width: 100%;
+		height: 3px;
+		background-color: var(--clr-secondary-400);
 		display: block;
-		bottom: -15px;
+		bottom: -3px;
 	}
 </style>

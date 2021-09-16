@@ -8,7 +8,7 @@
 
 <aside class="navigation" class:open>
 	<ul>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -18,7 +18,7 @@
                 </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering} >
+        <Hoverable let:hoveringI={hovering} >
             <li class="list" class:active={hovering} on:click={closeSidebar} >
                 <b></b>
                 <b></b>
@@ -28,7 +28,7 @@
                 </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -38,7 +38,7 @@
                     </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -48,7 +48,7 @@
                     </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -58,7 +58,7 @@
                     </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -68,7 +68,7 @@
                     </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -78,7 +78,7 @@
                     </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -88,7 +88,7 @@
                     </a>
             </li>
         </Hoverable>
-        <Hoverable let:hovering={hovering}>
+        <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
@@ -119,10 +119,11 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width:20rem;
+        width:15rem;
         max-width: 70vw;
-        border-radius: 1rem;
-        border-left: 5px solid var(--clr-primary-400);
+        min-height: 100vh;
+        border-bottom-right-radius: 1rem;
+        // border-left: 5px solid var(--clr-primary-400);
         box-sizing: initial;
         background: var(--clr-primary-400);
        // transition: width 0.5s;
@@ -132,7 +133,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding-left: 5px;
+        padding-left: 1rem;
         padding-top: 1.5rem;
     }
     .navigation ul li {
@@ -143,14 +144,14 @@
         border-bottom-left-radius: 1rem;
     }
     .navigation ul li.active {
-        background: var(--clr-primary-400);
+        background: var(--clr-secondary-400);
     }
     .navigation ul li b:nth-child(1) {
     position: absolute;
     top: -1rem;
     height: 1rem;
     width: 100%;
-    background: var(--clr-primary-400);
+    background: var(--clr-secondary-400);
     display: none;
     }
     .navigation ul li b:nth-child(1)::before {
@@ -168,7 +169,7 @@
     bottom: -1rem;
     height: 1rem;
     width: 100%;
-    background:var(--clr-primary-400);
+    background:var(--clr-secondary-400);
     display: none;
     }
     .navigation ul li b:nth-child(2)::before {
@@ -183,17 +184,17 @@
     }
     .navigation ul li.active b:nth-child(1),
     .navigation ul li.active b:nth-child(2){
-display: block;
+       display: block;
     }
     .navigation ul li a{
         position: relative;
         width: 100%;
         display: flex;
         text-decoration: none;
-        color: var(--clr-neutral-400);
+        color: var(--clr-neutral-300);
     } 
     .navigation ul li.active a{
-        color: var(--clr-primary-700);
+        color: var(--clr-neutral-100);
     }
     .navigation ul li a .icon{
         position: relative;

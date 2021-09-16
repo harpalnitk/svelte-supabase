@@ -7,7 +7,7 @@
 </script>
 
 <header class="nav-controller">
-  <nav class="flex">
+  <nav>
     <Hamburger bind:open={sidebar} />
     <Logo />
   </nav>
@@ -18,18 +18,21 @@
 <style lang="scss">
   // @import '../../../../styles/vars';
   .nav-controller {
-    height: 3rem;
+    height: calc(var(--fs-300) * 3);
     display: flex;
 
-    color: var(--clr-neutral-700);
-    padding: 0.5rem;
+    color: var(--clr-neutral-200);
+    padding: 0 0.5rem;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--clr-primary-400);
     box-shadow: 0 2px 6px var(--clr-neutral-400);
+    margin-bottom: 1rem;
 
     nav {
       display: flex;
-      // align-self: center;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>

@@ -14,7 +14,7 @@
 
   .burger {
     display: none;
-    color: var(--clr-neutral-700);
+    color:currentColor;
     margin-right: 1rem;
     cursor: pointer;
     border-style: none;
@@ -25,8 +25,8 @@
     &:focus {
       outline: 2px solid transparent;
       outline-offset: 2px;
-      background-color: var(--clr-accent-400);
-      color: var(--clr-primary-400);
+      background-color: var(--clr-primary-400);
+      color: var(--clr-neutral-100);
     }
   }
 
