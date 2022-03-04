@@ -2,18 +2,23 @@
 
   export let placeholder;
   export let inputType = 'text';
-  export let controlType = null;
-  export let id;
-  export let rows = null;
+  // export let controlType = null;
+  export let id='';
+  // export let rows = null;
   export let value;
   export let valid = true;
   export let validityMessage = ''; //empty string is treated as not true
   let touched = false;
   let showPW = false;
-  let type = inputType === 'password' ? showPW ? "text" : "password" : inputType;
+  $:type = inputType === 'password' ? showPW ? "text" : "password" : inputType;
+
+  $: console.log('valid',valid);
 </script>
+{#if validityMessage && !valid && touched}
+<div class="error-message">{validityMessage}</div>
+{/if}
 <div class="form-control">
-{#if controlType === 'textarea'}
+<!-- {#if controlType === 'textarea'}
 <textarea
 class:invalid={!valid && touched}
 {rows}
@@ -22,7 +27,7 @@ bind:value
 on:blur={() => (touched = true)}
 {placeholder}
 />
-{:else}
+{:else} -->
 
   <input 
   class:invalid={!valid && touched}
@@ -39,8 +44,9 @@ on:blur={() => (touched = true)}
   on:click={() => showPW = !showPW}>&#128065;</div>
   {/if}
 
-{/if}
+<!-- {/if} -->
 </div>
+
 
 
 
@@ -52,7 +58,7 @@ on:blur={() => (touched = true)}
     height: 50px;
     margin-bottom: 1rem;
 }
-.form-control input,textarea{
+.form-control input{
     position: absolute;
     top: 0;
     left: 0;
@@ -61,33 +67,35 @@ on:blur={() => (touched = true)}
     border: none;
     background: transparent;
     padding: 0 20px;
-    font-size: 16px;
+    font-size: var(--fs-300);
     box-sizing: border-box;
     outline: none;
-    border-radius: 8px;
+    border-radius: var(--fs-100);
     box-shadow: -4px -4px 10px rgba(white,1),
                inset 4px 4px 10px rgba(black,.05),
                inset -4px -4px 10px rgba(white,1),
                4px 4px 10px rgba(black,.05);
 }
-.form-control input::placeholder,.form-control textarea::placeholder{
+.form-control input::placeholder{
     color: #ccc;
 }
-.form-control input,
-.form-control textarea {
-  border-radius: 3px 3px 0 0;
+.form-control input {
+    border-radius: 3px 3px 0 0;
     border-bottom: 2px solid var(--clr-neutral-100);
     transition: border-color 0.1s ease-out;
   }
-  .form-control input:focus,
-  .form-control textarea:focus {
+  .form-control input:focus {
     border-color: var(--clr-secondary-400);
+    outline: none;
+  }
+  .form-control input.invalid:focus {
+    border-color: var(--clr-error-400);
     outline: none;
   }
 
   .invalid {
-    border-color: var(--clr-accent-400);
-    background: var(--clr-accent-300);
+    border-color: var(--clr-error-400);
+    background: var(--clr-error-300);
   }
 
 //128065	
@@ -98,7 +106,7 @@ on:blur={() => (touched = true)}
     transform: translateY(-50%);
    // width: 30px;
    // height: 30px;
-    font-size: 24px;
+    font-size: var(--fs-500);
    // background-size: cover;
     cursor: pointer;
 }
@@ -115,4 +123,9 @@ on:blur={() => (touched = true)}
 #toggle.active::before{
 display: block;
 }
+.error-message {
+    color: var(--clr-error-400);
+    margin: 0.25rem 0;
+    font-size: var(--fs-200);
+  }
 </style>

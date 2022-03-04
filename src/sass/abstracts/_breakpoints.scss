@@ -1,5 +1,9 @@
 $breakpoints: (
-  small: 48em, //640px tablet
-  medium: 64em, //1040px  Laptop
-  very-small: 23.4375em // 375px medium mobile
+  m-small: 20rem, // 320px medium mobile
+  m-medium: 23.4375rem, //375px tablet
+  m-big: 25.5625rem, //425px  Laptop
+  tablet: 48rem, //768px  Laptop
+  laptop: 64rem, //1024px  Laptop
+  laptop-big: 90rem, //1440px  Laptop
+  4K: 160rem, //2560px  Laptop
 );

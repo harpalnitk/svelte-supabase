@@ -1,12 +1,27 @@
 @use '../abstracts' as *;
 
 :root {
-  --section-spacing: 1.5rem;
-  @include mq(small) {
-    --section-spacing: 3.5rem;
+  --section-spacing: 1rem;
+  @include mq(m-small) {
+    --section-spacing: 1rem;
   }
-  @include mq(medium) {
-    --section-spacing: 7rem;
+  @include mq(m-medium) {
+    --section-spacing: 1.25rem;
+  }
+  @include mq(m-large) {
+    --section-spacing: 1.25rem;
+  }
+  @include mq(tablet) {
+    --section-spacing: 1.5rem;
+  }
+  @include mq(laptop) {
+    --section-spacing: 2rem;
+  }
+  @include mq(laptop-large) {
+    --section-spacing: 2rem;
+  }
+  @include mq(4K) {
+    --section-spacing: 4rem;
   }
   @each $color, $shade in $colors {
 
@@ -16,12 +31,44 @@
   }
   
   @each $screen-size, $property in $type-scale {
-    @if $screen-size == small {
-      @each $prop, $value in $property { 
-        --fs-#{$prop}: #{$value};  //--fs-300: 1rem;
+    @if $screen-size == m-small {
+      @include mq(m-small) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
       }
-    } @else {
-      @include mq(small) {
+    } @else if $screen-size == m-medium {
+      @include mq(m-medium) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    } @else if $screen-size == m-large {
+      @include mq(m-large) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    } @else if $screen-size == tablet {
+      @include mq(tablet) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    } @else if $screen-size == laptop {
+      @include mq(laptop) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    } @else if $screen-size == laptop-big {
+      @include mq(laptop-big) {
+        @each $prop, $value in $property {
+          --fs-#{$prop}: #{$value};
+        }
+      }
+    }@else   {
+      @include mq(4K) {
         @each $prop, $value in $property {
           --fs-#{$prop}: #{$value};
         }

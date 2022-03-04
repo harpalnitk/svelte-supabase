@@ -5,13 +5,13 @@
 
 
 <nav class="menu-controller">
-  <a aria-current="{$page.path === '/' ? 'page' : undefined}" href="/">Home</a>
-  <a aria-current="{$page.path === '/about' ? 'page' : undefined}" href="/about">About</a>
-  <a aria-current="{$page.path === '/contact' ? 'page' : undefined}" href="/contact">Contact</a>
-  <a aria-current="{$page.path === '/timeline' ? 'page' : undefined}" href="/timeline">Timeline</a>
-  <a aria-current="{$page.path === '/playground' ? 'page' : undefined}" href="/playground">Playground</a>
-  <a aria-current="{$page.path === '/dashboard' ? 'page' : undefined}" href="/dashboard">Dashboard</a>
-  <a aria-current="{$page.path === '/auth' ? 'auth' : undefined}" href="/auth">Login</a>
+  <a aria-current="{$page.url.pathname === '/' ? 'page' : undefined}" href="/">Home</a>
+  <a aria-current="{$page.url.pathname === '/about' ? 'page' : undefined}" href="/about">About</a>
+  <a aria-current="{$page.url.pathname === '/contact' ? 'page' : undefined}" href="/contact">Contact</a>
+  <a aria-current="{$page.url.pathname === '/timeline' ? 'page' : undefined}" href="/timeline">Timeline</a>
+  <a aria-current="{$page.url.pathname === '/playground' ? 'page' : undefined}" href="/playground">Playground</a>
+  <a aria-current="{$page.url.pathname === '/dashboard' ? 'page' : undefined}" href="/dashboard">Dashboard</a>
+  <a aria-current="{$page.url.pathname === '/auth' ? 'auth' : undefined}" href="/auth">Login</a>
   
 </nav>
 
