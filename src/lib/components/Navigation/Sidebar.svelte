@@ -28,73 +28,15 @@
                 </a>
             </li>
         </Hoverable>
+
+
         <Hoverable let:hoveringI={hovering}>
             <li class="list" class:active={hovering} on:click={closeSidebar}>
                 <b></b>
                 <b></b>
-                <a href="/">
-                    <span class="icon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
-                    <span class="title">Contact</span>
-                    </a>
-            </li>
-        </Hoverable>
-        <Hoverable let:hoveringI={hovering}>
-            <li class="list" class:active={hovering} on:click={closeSidebar}>
-                <b></b>
-                <b></b>
-                <a href="/">
-                    <span class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-                    <span class="title">About</span>
-                    </a>
-            </li>
-        </Hoverable>
-        <Hoverable let:hoveringI={hovering}>
-            <li class="list" class:active={hovering} on:click={closeSidebar}>
-                <b></b>
-                <b></b>
-                <a href="/">
-                    <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                    <span class="title">Message</span>
-                    </a>
-            </li>
-        </Hoverable>
-        <Hoverable let:hoveringI={hovering}>
-            <li class="list" class:active={hovering} on:click={closeSidebar}>
-                <b></b>
-                <b></b>
-                <a href="/">
-                    <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i></span>
-                    <span class="title">Setting</span>
-                    </a>
-            </li>
-        </Hoverable>
-        <Hoverable let:hoveringI={hovering}>
-            <li class="list" class:active={hovering} on:click={closeSidebar}>
-                <b></b>
-                <b></b>
-                <a href="/">
+                <a href="/test">
                     <span class="icon"><i class="fa fa-question" aria-hidden="true"></i></span>
-                    <span class="title">Help</span>
-                    </a>
-            </li>
-        </Hoverable>
-        <Hoverable let:hoveringI={hovering}>
-            <li class="list" class:active={hovering} on:click={closeSidebar}>
-                <b></b>
-                <b></b>
-                <a href="/">
-                    <span class="icon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                    <span class="title">Password</span>
-                    </a>
-            </li>
-        </Hoverable>
-        <Hoverable let:hoveringI={hovering}>
-            <li class="list" class:active={hovering} on:click={closeSidebar}>
-                <b></b>
-                <b></b>
-                <a href="/">
-                    <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
-                    <span class="title">Signout</span>
+                    <span class="title">Test</span>
                     </a>
             </li>
         </Hoverable>
