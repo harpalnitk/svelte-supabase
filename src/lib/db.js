@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 
-
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzMTYxNzQ1NCwiZXhwIjoxOTQ3MTkzNDU0fQ.hlyAb2l4nmlgAUB1D5dOwQSzoje2dQll8K2MykWNyQg'
-const SUPABASE_URL = "https://vbbbczafepovtqjnyyej.supabase.co"
+//VITE_ prefix is necessary before any environment variable
+const SUPABASE_KEY= import.meta.env.VITE_SUPABASE_PRIVATE_KEY;
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 
 const supabase = createClient(SUPABASE_URL,SUPABASE_KEY);
 
