@@ -7,6 +7,7 @@ import Todo from '$lib/todos/Todo.svelte';
 
 
     let todos=[];
+    let newTask = '';
     onMount( async ()=>{
         getAllTodos();
     });
@@ -44,23 +45,56 @@ import Todo from '$lib/todos/Todo.svelte';
              console.log(err)
          }
     }
-</script>
+    //ADD
 
-{#each todos as todo}
+    const addNewTodo = async ()=>{
+        try {
+            if(newTask !== ''){
+            const {data, error} = await supabase
+            .from('todos')
+            .insert([{task:newTask}]);
+            await getAllTodos();
+            newTask = '';
+            }
+
+         } catch (err) {
+             console.log(err)
+         } 
+    }
+
+    //To add task on press enter on page
+    const handleKeyPress = (event)=>{
+ if(event.key === 'Enter' && newTask !== ''){
+     addNewTodo();
+ }
+    }
+</script>
 <main>
+    <div class="add-todo">
+        <input type="text" bind:value={newTask}>
+        <button on:click="{()=> addNewTodo()}">Add Task</button>
+    </div>
+{#each todos as todo}
+
 <Todo {todo} {updateTodo} {deleteTodo}/>
-</main>
+
 
 {:else}
    <p>No todos found</p>
 {/each}
-
-
+</main>
+<svelte:window on:keypress="{handleKeyPress}"></svelte:window>
 <style>
     main{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .add-todo{
+        display: flex;
+        margin-bottom: 1em;
+        gap: 1em;
     }
 
 </style>

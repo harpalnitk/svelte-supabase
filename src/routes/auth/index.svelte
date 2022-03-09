@@ -5,24 +5,44 @@
 	import supabase from '$lib/db';
 	let pwd='';
 	let email='';
-	const handleSubmit = async () => {
-		console.log(`Form submitted Password: ${pwd} Email: ${email}`);
+
+	const clearCredentials = () => {
+		pwd='';
+		email='';
+	}
+	$: emailValid = isValidEmail(email);
+    $: pwdValid = !isEmpty(pwd) && minLength(pwd,8);
+	const handleSignup = async () => {
+		console.log(`Signup: Form submitted Password: ${pwd} Email: ${email}`);
 		pwd = '';
 		email = '';
 		const { user, error } = await supabase.auth.signUp({
-        email: 'example@email.com',
-        password: 'example-password',
+        // email: 'example@email.com',
+        // password: 'example-password',
+		email: 'someone2@email.com',
+		password: '1234567887654321aa'
         });
+		clearCredentials();
      console.log(user,error);
 	};
-    $: emailValid = isValidEmail(email);
-    $: pwdValid = !isEmpty(pwd) && minLength(pwd,8);
+	const handleSignin = async () => {
+		console.log(`Signin: Form submitted Password: ${pwd} Email: ${email}`);
+		pwd = '';
+		email = '';
+		const { user, error } = await supabase.auth.signUp({
+        email: email,
+        password: pwd,
+        });
+		clearCredentials();
+     console.log(user,error);
+	};
+
 </script>
 
 <main>
 	<h3>Sign Up</h3>
 	<hr />
-	<form on:submit|preventDefault={handleSubmit}>
+	<form on:submit|preventDefault={handleSignup}>
 		<TextInput 
         placeholder="Enter Email" 
         inputType="email" 
@@ -37,7 +57,8 @@
         valid={pwdValid}
         validityMessage="Password must be minimum 8 characters long"
         on:input={(event) => (pwd = event.target.value)}/>
-        <Button on:click={handleSubmit} disabled={!(pwdValid && emailValid)}>Sign Up</Button>
+        <Button on:click={handleSignup} disabled={!(pwdValid && emailValid)}>Sign Up</Button>
+		<Button on:click={handleSignin} disabled={!(pwdValid && emailValid)}>Sign In</Button>
         <!-- <Button color='success'>Sign Up</Button>
         <Button color='error'>Sign Up</Button>
         <Button href='google.com'>Sign In</Button>

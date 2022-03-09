@@ -4,7 +4,7 @@
     export let todo, updateTodo, deleteTodo;
 </script>
 
-<div class='todos'>
+<div class='todos' class:done={todo.isComplete}>
     <input type="checkbox" checked={todo.isComplete} on:change=
     "{(e) => {
         todo.isComplete = e.currentTarget.checked;
@@ -22,5 +22,8 @@
         display: flex;
         gap: 10px;
         margin-bottom: 0.25em;
+    }
+    .done input[type='text']{
+        text-decoration: line-through;
     }
 </style>

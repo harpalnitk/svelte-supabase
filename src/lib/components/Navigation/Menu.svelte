@@ -7,6 +7,7 @@
 <nav class="menu-controller">
   <a aria-current="{$page.url.pathname === '/' ? 'page' : undefined}" href="/">Home</a>
   <a aria-current="{$page.url.pathname === '/test' ? 'page' : undefined}" href="/test">Test</a>
+  <a aria-current="{$page.url.pathname === '/todos' ? 'page' : undefined}" href="/todos">Todos</a>
   <a aria-current="{$page.url.pathname === '/auth' ? 'auth' : undefined}" href="/auth">Login</a>
   
 </nav>

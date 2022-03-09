@@ -40,6 +40,16 @@
                     </a>
             </li>
         </Hoverable>
+        <Hoverable let:hoveringI={hovering}>
+            <li class="list" class:active={hovering} on:click={closeSidebar}>
+                <b></b>
+                <b></b>
+                <a href="/todos">
+                    <span class="icon"><i class="fa fa-question" aria-hidden="true"></i></span>
+                    <span class="title">Todos</span>
+                    </a>
+            </li>
+        </Hoverable>
     </ul>
 </aside>
 
