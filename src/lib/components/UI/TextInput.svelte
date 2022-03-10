@@ -12,7 +12,7 @@
   let showPW = false;
   $:type = inputType === 'password' ? showPW ? "text" : "password" : inputType;
 
-  $: console.log('valid',valid);
+ // $: console.log('valid',valid);
 </script>
 {#if validityMessage && !valid && touched}
 <div class="error-message">{validityMessage}</div>
@@ -126,6 +126,6 @@ display: block;
 .error-message {
     color: var(--clr-error-400);
     margin: 0.25rem 0;
-    font-size: var(--fs-200);
+    font-size: var(--fs-300);
   }
 </style>

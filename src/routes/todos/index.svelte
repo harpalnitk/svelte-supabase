@@ -3,6 +3,7 @@ import supabase from "$lib/db";
 
 import { onMount } from "svelte";
 import Todo from '$lib/todos/Todo.svelte';
+import {user} from '$lib/user-store';
 
 
 
@@ -70,6 +71,7 @@ import Todo from '$lib/todos/Todo.svelte';
     }
 </script>
 <main>
+    <h4>Welcome {$user?.email ? $user.email : ''}!</h4>
     <div class="add-todo">
         <input type="text" bind:value={newTask}>
         <button on:click="{()=> addNewTodo()}">Add Task</button>
